@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.slider-container {
+   margin: 10px auto;
+    height: 300px;
+    width: 600px;
+    position: relative;
+}
+.slider-container .slider-number{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 166, 249, 0.6);
+    user-select: none;
+}
+.slider-container img{
+    height: 300px;
+    position: absolute;
+    width: 600px;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+}
+.slider-container img.active{
+    opacity: 1;
+}
+.slider-controls{
+    position: relative;
+    margin: auto;
+    width: 600px;
+}
+.slider-controls .prev,
+.slider-controls .next{
+    background-color: rgb(0, 166, 249);
+    padding: 5px 10px;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+.slider-controls .next{
+    float: right;
+}
+.slider-controls .prev{
+    float: left;
+}
+.slider-controls .prev.disabled,
+.slider-controls .next.disabled{
+    
+    background-color: rgba(0, 166, 249,0.6);
+    cursor: no-drop;
+}
+.slider-controls .indicators{
+    /* display: inline-block; */
+    width: 60%;
+    /* margin: 0 auto; */
+    float: left;
+}
+.slider-controls .indicators ul{
+    margin: auto;
+   display: flex;
+   /* align-items: center; */
+   justify-content: center;
+}
+.slider-controls .indicators ul li{
+    list-style: none;
+    display: inline;
+    background-color: rgb(209, 209, 209);
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 500;
+    /* opacity: 0.5; */
+    cursor: pointer;
+    transition:  0.3s;
+}
+.slider-controls .indicators ul li.active,
+.slider-controls .indicators ul li:hover{
+    /* opacity: 1; */
+    background: rgb(0, 166, 249);
+    color: white;
+}
